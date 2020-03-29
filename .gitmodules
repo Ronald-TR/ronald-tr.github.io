@@ -1,0 +1,15 @@
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/budparr/gohugo-theme-ananke.git
+[submodule "themes/gohugoio"]
+	path = themes/gohugoio
+	url = https://github.com/gohugoio/gohugoioTheme
+[submodule "themes/gohugoioTheme"]
+	path = themes/gohugoioTheme
+	url = https://github.com/gohugoio/gohugoioTheme
+[submodule "themes/axiom"]
+	path = themes/axiom
+	url = https://github.com/jhauraw/axiom.git
+[submodule "themes/hugo-future-imperfect-slim"]
+	path = themes/hugo-future-imperfect-slim
+	url = https://github.com/pacollins/hugo-future-imperfect-slim.git
