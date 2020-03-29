@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://example.com/pt/tags/anti-patterns/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/categories/article/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/categories/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://example.com/pt/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://example.com/pt/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/tags/pep8/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/posts/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/tags/python/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/categories/python/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/posts/my-first-post/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/tags/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://example.com/pt/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/home/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/home/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://example.com/pt/home/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://example.com/pt/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://example.com/pt/about/"
+                />
+  </url>
+  
+</urlset>
