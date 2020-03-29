@@ -13,3 +13,7 @@
 [submodule "themes/hugo-future-imperfect-slim"]
 	path = themes/hugo-future-imperfect-slim
 	url = https://github.com/pacollins/hugo-future-imperfect-slim.git
+[submodule "public"]
+	path = public
+	url = https://github.com/Ronald-TR/Ronald-TR.github.io.git
+	branch = master
