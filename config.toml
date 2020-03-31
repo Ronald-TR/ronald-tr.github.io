@@ -1,7 +1,8 @@
-baseurl                 = "https://ronald-tr.github.io"
+# baseurl                 = "https://ronald-tr.github.io"
 DefaultContentLanguage  = "en"
-title                   = "Hugo Future Imperfect Slim"
+# title                   = "Hugo Future Imperfect"
 theme                   = "hugo-future-imperfect-slim"
+# theme                   = "ananke"
 preserveTaxonomyNames   = true
 paginate                = 3
 disqusShortname         = ""
@@ -12,7 +13,7 @@ disableLanguages        = [""]
 [params]
   # Add additional section names to mainSections to include posts from
   # those sections on the homepage.
-  mainSections          = ["blog"]
+  # mainSections          = ["blog"]
   enableCDN             = false
 
   # Loads CSS and JavaScript files. The variable is an array so that you can load
@@ -23,7 +24,7 @@ disableLanguages        = [""]
   jsFiles               = ["default"]
   # Sets options for highlight.js
   highlightjs           = true
-  highlightjsTheme      = "github"
+  highlightjsTheme      = "monokai"
   highlightjsLang       = ["html", "css", "js", "toml"]
   # Sets where "View More Posts" links to
   viewMorePostsLink     = "/posts/"
@@ -43,7 +44,7 @@ disableLanguages        = [""]
     # directory favicon.ico, utlize this funtion. It is recommened to use
     # https://realfavicongenerator.net to generate your icons as that is the basis
     # for the theme's naming.
-    favicon             = false
+    favicon             = true
     svg                 = true
     faviconVersion      = "1"
     msColor             = "#ffffff" # Copy from the https://realfavicongenerator.net
@@ -77,11 +78,12 @@ disableLanguages        = [""]
       src                 = "/img/saitama_icon.jpg"
       # Masks image in a certain shape. Supported are circle, triangle, diamond, and hexagon.
       shape               = "circle"
+      # circle = true
       width               = ""
       alt                 = "IT- The Blog"
 
   [params.sidebar]
-    # about               = "test"
+    about               = "Wellcome adventurer! i'ld like that this blog follows my studies and adventuries in IT world, so be free to choose your favorite drink and read some of the articles!"
     # Sets the number of recent posts to show in the sidebar. The default value is 5.
     postAmount          = 5
     # set to show or to hide categories in the sidebar
@@ -91,9 +93,9 @@ disableLanguages        = [""]
 
   [params.footer]
     # Sets RSS icons to appear on the sidebar with the social media buttons
-    rssFooter           = true
+    rssFooter           = false
     # Sets Social Media icons to appear on the sidebar
-    socialFooter        = true
+    socialFooter        = false
 
   # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
   # due to its ease of use. Feel free to check out both and decide which you would
@@ -164,7 +166,7 @@ disableLanguages        = [""]
   [Languages.pt]
     LanguageCode        = "pt"
     LanguageName        = "Português"
-    title               = "Hugo Future Imperfect Slim em português"
+    title               = ""
     description         = "Um tema do HTML5 UP, portado por Julio Pescadora e reduzido por Patrick Collins. Multilíngue por StatnMap. Feito com Hugo."
     weight              = 2
     contentDir          = "content/pt"
@@ -186,7 +188,7 @@ disableLanguages        = [""]
     [[Languages.pt.menu.main]]
       name              = "Posts"
       identifier        = "Posts"
-      url               = "/pt/posts/"
+      url               = "/posts/"
       pre               = "<i class='far fa-newspaper'></i>"
       weight            = 3
 

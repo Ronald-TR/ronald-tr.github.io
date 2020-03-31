@@ -1,7 +1,7 @@
 ---
 title: "Example"
 date: 2020-03-17T17:13:19-03:00
-draft: true
+draft: false
 features:
  - heading: teste
    # image_path: /images/icon-fast.svg

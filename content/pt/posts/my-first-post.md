@@ -10,7 +10,7 @@ tags: ["python", "pep8", "anti-patterns"]
 categories: ["python", "article"]
 show_reading_time: true
 type: "post"
-
+author: "Ronald Rodrigues"
 ---
 
 Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.
