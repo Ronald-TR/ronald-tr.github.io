@@ -3,76 +3,89 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/about/</loc>
+    <loc>/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://example.com/pt/about/"
+                href="/pt/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/about/"
+                href="/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/home/</loc>
+    <loc>/posts/my-first-post/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://example.com/pt/home/"
+                href="/pt/posts/my-first-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/home/"
+                href="/posts/my-first-post/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/categories/</loc>
+    <loc>/posts/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://example.com/pt/categories/"
+                href="/pt/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/categories/"
+                href="/posts/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://example.com/</loc>
+    <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://example.com/pt/"
+                href="/pt/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/"
+                href="/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://example.com/pt/tags/"
+                href="/pt/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/tags/"
+                href="/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
                 />
   </url>
   

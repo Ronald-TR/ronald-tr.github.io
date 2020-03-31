@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Hugo Future Imperfect Slim em português</title>
-    <link>https://example.com/pt/categories/</link>
-    <description>Recent content in Categories on Hugo Future Imperfect Slim em português</description>
+    <title>Categories on </title>
+    <link>/pt/categories/</link>
+    <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <lastBuildDate>Mon, 16 Mar 2020 14:05:36 -0300</lastBuildDate>
     
-	<atom:link href="https://example.com/pt/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/pt/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>article</title>
-      <link>https://example.com/pt/categories/article/</link>
+      <link>/pt/categories/article/</link>
       <pubDate>Mon, 16 Mar 2020 14:05:36 -0300</pubDate>
       
-      <guid>https://example.com/pt/categories/article/</guid>
+      <guid>/pt/categories/article/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://example.com/pt/categories/python/</link>
+      <link>/pt/categories/python/</link>
       <pubDate>Mon, 16 Mar 2020 14:05:36 -0300</pubDate>
       
-      <guid>https://example.com/pt/categories/python/</guid>
+      <guid>/pt/categories/python/</guid>
       <description></description>
     </item>
     

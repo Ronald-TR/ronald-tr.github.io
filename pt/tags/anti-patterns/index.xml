@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>anti-patterns on Hugo Future Imperfect Slim em português</title>
-    <link>https://example.com/pt/tags/anti-patterns/</link>
-    <description>Recent content in anti-patterns on Hugo Future Imperfect Slim em português</description>
+    <title>anti-patterns on </title>
+    <link>/pt/tags/anti-patterns/</link>
+    <description>Recent content in anti-patterns on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt</language>
     <lastBuildDate>Mon, 16 Mar 2020 14:05:36 -0300</lastBuildDate>
     
-	<atom:link href="https://example.com/pt/tags/anti-patterns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/pt/tags/anti-patterns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python: anti-patterns que você talvez não conheça</title>
-      <link>https://example.com/pt/posts/my-first-post/</link>
+      <link>/pt/posts/my-first-post/</link>
       <pubDate>Mon, 16 Mar 2020 14:05:36 -0300</pubDate>
       
-      <guid>https://example.com/pt/posts/my-first-post/</guid>
+      <guid>/pt/posts/my-first-post/</guid>
       <description>Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.
 Este artigo é fortemente baseado na sessão &amp;ldquo;Programming Recomendations&amp;rdquo; da PEP8 e no e-book gratuito &amp;ldquo;The Little Book of Python Anti-Patterns&amp;quot;, com pequenas adições pessoais na descrição de cada tópico. :smile:
 Anti patterns Comparações entre singletons utilizando o sinal de dupla-igualdade (==). Para True ou False Quando escrevemos condições booleanas como:</description>
