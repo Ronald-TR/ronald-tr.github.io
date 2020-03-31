@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+  <meta charset="utf-8">
+<title>Python: anti-patterns que você talvez não conheça - </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.66.0" /><meta itemprop="name" content="Python: anti-patterns que você talvez não conheça">
+<meta itemprop="description" content="Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.
+Este artigo é fortemente baseado na sessão &ldquo;Programming Recomendations&rdquo; da PEP8 e no e-book gratuito &ldquo;The Little Book of Python Anti-Patterns&quot;, com pequenas adições pessoais na descrição de cada tópico. :smile:
+Anti patterns Comparações entre singletons utilizando o sinal de dupla-igualdade (==). Para True ou False Quando escrevemos condições booleanas como:">
+<meta itemprop="datePublished" content="2020-03-16T14:05:36-03:00" />
+<meta itemprop="dateModified" content="2020-03-16T14:05:36-03:00" />
+<meta itemprop="wordCount" content="414">
+
+
+
+<meta itemprop="keywords" content="python,pep8,anti-patterns," /><meta property="og:title" content="Python: anti-patterns que você talvez não conheça" />
+<meta property="og:description" content="Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.
+Este artigo é fortemente baseado na sessão &ldquo;Programming Recomendations&rdquo; da PEP8 e no e-book gratuito &ldquo;The Little Book of Python Anti-Patterns&quot;, com pequenas adições pessoais na descrição de cada tópico. :smile:
+Anti patterns Comparações entre singletons utilizando o sinal de dupla-igualdade (==). Para True ou False Quando escrevemos condições booleanas como:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/pt/posts/my-first-post/" />
+<meta property="article:published_time" content="2020-03-16T14:05:36-03:00" />
+<meta property="article:modified_time" content="2020-03-16T14:05:36-03:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python: anti-patterns que você talvez não conheça"/>
+<meta name="twitter:description" content="Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.
+Este artigo é fortemente baseado na sessão &ldquo;Programming Recomendations&rdquo; da PEP8 e no e-book gratuito &ldquo;The Little Book of Python Anti-Patterns&quot;, com pequenas adições pessoais na descrição de cada tópico. :smile:
+Anti patterns Comparações entre singletons utilizando o sinal de dupla-igualdade (==). Para True ou False Quando escrevemos condições booleanas como:"/>
+<meta name="twitter:site" content="@example"/>
+<link rel="stylesheet" href="/css/bundle.min.1dc288dff27f97986dfb10d79c05d69aff2155b4f98b448c82fda2d722c35071.css" integrity="sha256-HcKI3/J/l5ht&#43;xDXnAXWmv8hVbT5i0SMgv2i1yLDUHE=">
+        <link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/pt/">
+        
+          
+            posts
+          
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="/pt/" class="link"><i class='fas fa-home'></i> Início</a>
+          
+        
+      
+        
+          
+          
+            <a href="/pt/about/" class="link"><i class='far fa-id-card'></i> Sobre</a>
+          
+        
+      
+        
+          
+          
+            <a href="/pt/posts/" class="link"><i class='far fa-newspaper'></i> Posts</a>
+          
+        
+      
+        
+          
+          
+            <a href="/pt/categories/" class="link"><i class='fas fa-sitemap'></i> Categorias</a>
+          
+        
+      
+        
+          
+          
+            <a href="/pt/contact/" class="link"><i class='far fa-envelope'></i> Contato</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+
+    </menu>
+    
+
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="lang-toggle" lang="pt">pt</a>
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="lang-menu" class="flyout-menu">
+  <a href="#" lang="pt" class="link active">Português (pt)</a>
+  
+      <a href="/posts/my-first-post/" lang="en" class="link">English (en)</a>
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a&amp;url=%2fpt%2fposts%2fmy-first-post%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=%2fpt%2fposts%2fmy-first-post%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=%2fpt%2fposts%2fmy-first-post%2f&amp;title=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=%2fpt%2fposts%2fmy-first-post%2f&amp;title=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=%2fpt%2fposts%2fmy-first-post%2f&amp;description=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Confira%20esta%20postagem%20por Ronald%20Rodrigues&amp;body=%2fpt%2fposts%2fmy-first-post%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/pt/"><img src="/img/saitama_icon.jpg" class="circle" width="" alt="IT- The Blog" /></a>
+  <header>
+    <h1>IT - The Blog</h1>
+  </header>
+  <main>
+    <p>Wellcome adventurer, feel free to read some of my articles</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/pacollins/hugo-future-imperfect-slim" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/example" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/example" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/example" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+<li><a href="//telegram.me/example" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+
+
+
+<li><a href="mailto:example" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/pt/posts/my-first-post/">Python: anti-patterns que você talvez não conheça</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time class="published" datetime="2020-03-16 14:05:36 -0300 -03">
+      16 de March, 2020
+    </time>
+    <span class="author">Ronald Rodrigues</span>
+    
+      <p>2 minutos de leitura</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a&amp;url=%2fpt%2fposts%2fmy-first-post%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=%2fpt%2fposts%2fmy-first-post%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=%2fpt%2fposts%2fmy-first-post%2f&amp;title=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=%2fpt%2fposts%2fmy-first-post%2f&amp;title=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=%2fpt%2fposts%2fmy-first-post%2f&amp;description=Python%3a%20anti-patterns%20que%20voc%c3%aa%20talvez%20n%c3%a3o%20conhe%c3%a7a" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Confira%20esta%20postagem%20por Ronald%20Rodrigues&amp;body=%2fpt%2fposts%2fmy-first-post%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="/pt/posts/my-first-post/" class="image featured">
+    <img src="/img/snakes.jpg" alt="">
+  </a>
+
+
+  <div class="content">
+    <p>Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.</p>
+<p>Este artigo é fortemente baseado na sessão &ldquo;<a href="https://www.python.org/dev/peps/pep-0008/#programming-recommendations">Programming Recomendations</a>&rdquo; da PEP8 e no e-book gratuito &ldquo;<a href="https://docs.quantifiedcode.com/python-anti-patterns/index.html">The Little Book of Python Anti-Patterns</a>&quot;, com pequenas adições pessoais na descrição de cada tópico. :smile:</p>
+<h2 id="anti-patterns">Anti patterns</h2>
+<h3 id="comparações-entre-singletons-utilizando-o-sinal-de-dupla-igualdade-">Comparações entre singletons utilizando o sinal de dupla-igualdade (==).</h3>
+<h4 id="para-true-ou-false">Para True ou False</h4>
+<p>Quando escrevemos condições booleanas como:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> condition <span style="color:#f92672">==</span> True:
+</code></pre></div><p>Queremos dizer: &ldquo;se esta condição é verdadeira, faça isto&rdquo;.</p>
+<p>Em um contexto de operações booleanas, o Python já interpreta <a href="https://docs.python.org/2/reference/expressions.html#boolean-operations">valores não vazios como <code>True</code></a>, o que torna a comparação acima bastante redundante se <code>condition</code> for uma variável.</p>
+<p>No caso abaixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">condition <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;algum valor qualquer&#39;</span>
+<span style="color:#66d9ef">if</span> condition:
+    <span style="color:#75715e"># esse contexto será executado.</span>
+</code></pre></div><p>A variável <code>condition</code> será avaliada como <code>True</code> e executará o bloco do <code>if</code>, mesmo <code>condition</code> sendo uma string e não um booleano.</p>
+<blockquote>
+<p>Internamente, o Python chama o método mágico <code>__bool__()</code> do objeto que efetuará a lógica por trás da avaliação sobre qual valor booleano aquele objeto assumirá, veja todos os métodos mágicos disponíveis <a href="https://docs.python.org/3/reference/datamodel.html#basic-customization">aqui</a>.</p>
+</blockquote>
+<p>Em casos bastante específicos onde há a necessidade de comparação explícita, prefira o pattern proposto na PEP8: <code>if condition is True</code>, ambos os formatos são para a redução de redundâncias e incrementos de legibilidade, tudo acima também se aplica para comparações com <code>False</code>.</p>
+<h3 id="comparações-com-none">Comparações com None</h3>
+<p>Este tópico é bem semelhante ao tópico anterior, com a adição de um detalhe:</p>
+<p>Tome cuidado ao usar o formato quando sua intenção é validar se sua variável é diferente de <code>None</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> condition:
+</code></pre></div><p>Tipos built-in vazios e <code>None</code> em um contexto booleano serão interpretados da mesma forma: Como <code>False</code>.</p>
+<p>No código abaixo há o exemplo de uma prática comum: A definição de valores <em>default</em> para parâmetros de funções. Também é comum utilizarmos estes pârametros como <em>flags</em> que definem fluxos internos de execução da função:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(bar<span style="color:#f92672">=</span>None):
+    <span style="color:#66d9ef">if</span> bar:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Yay! The bar received something!&#34;</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Oh no, the bar received nothing&#34;</span>)
+
+
+foo({})  <span style="color:#75715e"># send an empty dict</span>
+<span style="color:#75715e"># output</span>
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#e6db74">&#34;Oh no, the bar received nothing&#34;</span>
+</code></pre></div><p>No exemplo acima, o dicionário vazio <code>{}</code> foi avaliado da mesma forma que <code>None</code>, induzindo <code>foo</code> a dizer que nada foi passado para <code>bar</code>.
+Apesar de conceitualmente &ldquo;nada&rdquo; realmente tenha sido passado e acima termos um exemplo inofensivo, essa checagem abre brechas para comportamentos inesperados e a retornos imprevisíveis.</p>
+<p>Prefira a notação sugerida na PEP8:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> condition <span style="color:#f92672">is</span> None:
+
+<span style="color:#75715e"># ou para negações </span>
+
+<span style="color:#66d9ef">if</span> condition <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None:
+</code></pre></div>
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="pt/categories/python">python</a></li>
+          
+            
+            <li><a class="article-category-link" href="pt/categories/article">article</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="pt/tags/python">python</a></li>
+          
+            
+            <li><a class="article-category-link" href="pt/tags/pep8">pep8</a></li>
+          
+            
+            <li><a class="article-category-link" href="pt/tags/anti-patterns">anti-patterns</a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+
+<div class="pagination">
+  
+  
+    <a href="/pt/posts/example/" class="button"><div class="next"><div>Example</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Posts recentes</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="/pt/posts/my-first-post/" class="image featured">
+    <img src="/img/snakes.jpg" alt="">
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="/pt/posts/my-first-post/">Python: anti-patterns que você talvez não conheça</a></h1>
+          <time class="published" datetime="">16 de March, 2020</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>Sobre</h1>
+      </header>
+      <p>Wellcome adventurer! i'ld like that this blog follows my studies and adventuries in IT world, so be free to choose your favorite drink and read some of the articles!</p>
+      <footer>
+        <a href="/pt/about" class="button">Aprenda mais</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+  <p class="copyright">
+    
+      &copy; 2020
+      
+        
+      
+    . <br>
+    Tema: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect</a><br>Adaptado de <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Disponibilizado pelo <a href='https://gohugo.io/' title='0.66.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

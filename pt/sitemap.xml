@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/pt/</loc>
+    <lastmod>2020-03-17T17:13:19-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pt/posts/example/</loc>
+    <lastmod>2020-03-17T17:13:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pt/posts/</loc>
+    <lastmod>2020-03-17T17:13:19-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pt/tags/anti-patterns/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pt/categories/article/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pt/categories/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pt/tags/pep8/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pt/tags/python/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pt/categories/python/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pt/posts/my-first-post/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/my-first-post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/posts/my-first-post/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pt/tags/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/pt/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/about/"
+                />
+  </url>
+  
+</urlset>
