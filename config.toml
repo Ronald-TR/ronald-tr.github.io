@@ -1,6 +1,6 @@
 # baseurl                 = "https://ronald-tr.github.io"
 DefaultContentLanguage  = "en"
-# title                   = "Hugo Future Imperfect"
+title                   = "IT - The Blog | Ronald"
 theme                   = "hugo-future-imperfect-slim"
 # theme                   = "ananke"
 preserveTaxonomyNames   = true
@@ -9,6 +9,12 @@ disqusShortname         = ""
 googleAnalytics         = ""
 pluralizeListTitles     = false
 disableLanguages        = [""]
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
 
 [params]
   # Add additional section names to mainSections to include posts from
@@ -24,7 +30,7 @@ disableLanguages        = [""]
   jsFiles               = ["default"]
   # Sets options for highlight.js
   highlightjs           = true
-  highlightjsTheme      = "monokai"
+  highlightjsTheme      = "dracula"
   highlightjsLang       = ["html", "css", "js", "toml"]
   # Sets where "View More Posts" links to
   viewMorePostsLink     = "/posts/"
@@ -166,7 +172,7 @@ disableLanguages        = [""]
   [Languages.pt]
     LanguageCode        = "pt"
     LanguageName        = "Português"
-    title               = ""
+    title               = "IT - O Blog | Ronald"
     description         = "Um tema do HTML5 UP, portado por Julio Pescadora e reduzido por Patrick Collins. Multilíngue por StatnMap. Feito com Hugo."
     weight              = 2
     contentDir          = "content/pt"
