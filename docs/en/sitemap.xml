@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>ronald.dev.br/en/about/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/en/blog/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/en/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/en/blog/2020-03/8-most-common-python-anti-patterns-that-you-shouldnt-know/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/blog/2020-03/python-anti-patterns-que-voc%C3%AA-talvez-n%C3%A3o-conhe%C3%A7a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/blog/2020-03/8-most-common-python-anti-patterns-that-you-shouldnt-know/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/en/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/tags/"
+                />
+  </url>
+  
+</urlset>

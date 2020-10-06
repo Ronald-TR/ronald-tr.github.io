@@ -12,7 +12,7 @@ hasCJKLanguage             = true
 summaryLength              = 200
 Paginate                   = 3
 
-theme                      = "allinone"
+theme                      = "AllinOne"
 title                      = "Ronald Rodrigues | IT Blog"
 
 pygmentsuseclasses         = true

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Ronald Rodrigues">
+  <meta name="description" content="Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.">
+  
+  <meta property="og:title" content="Python: anti-patterns que você talvez não conheça" />
+<meta property="og:description" content="Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="ronald.dev.br/blog/2020-03/python-anti-patterns-que-voc%C3%AA-talvez-n%C3%A3o-conhe%C3%A7a/" />
+<meta property="article:published_time" content="2020-03-16T14:05:36-03:00" />
+<meta property="article:modified_time" content="2020-03-16T14:05:36-03:00" /><meta property="og:site_name" content="IT | O Blog" />
+
+
+  <title>
+  
+       Python: anti-patterns que você talvez não conheça | IT | O Blog 
+  
+  </title>
+
+  <link rel="canonical" href="ronald.dev.br/blog/2020-03/python-anti-patterns-que-voc%C3%AA-talvez-n%C3%A3o-conhe%C3%A7a/">
+
+  
+  
+
+  
+  <link href="ronald.dev.br/vendors/fontawesome-free-5.14.0-web/css/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="ronald.dev.br/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="ronald.dev.br/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="ronald.dev.br/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="ronald.dev.br/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="ronald.dev.br/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="ronald.dev.br/img/zheng.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="ronald.dev.br/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="ronald.dev.br/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="ronald.dev.br">
+          
+        <img class="avatar" src="ronald.dev.br/img/zheng.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Ronald Rodrigues</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="ronald.dev.br"></a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="ronald.dev.br/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="ronald.dev.br/moment/" >Moment  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="ronald.dev.br/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('ronald.dev.br/img/header-slides/3840x2160-px-Bag-End-Bilbo-Baggins-Frodo-Baggins-Hobbits-house-Middle-earth-The-Hobbit-The-Lord-of-the-Rings-The-Shire-1055954.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="ronald.dev.br">
+          
+            <img class="pull-right avatar avatar-md" src="ronald.dev.br/img/saitama.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="ronald.dev.br">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>IT | O Blog</strong>
+          </h1>
+        </a>
+        
+
+         
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+          
+  <a href="//github.com/ronald-tr" target="_blank" rel="noopener me"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+
+
+
+
+
+
+
+  <a href="//linkedin.com/in/ronald-rodrigues-farias-aa4313a3" target="_blank" rel="noopener me"><i class="fab fa-linkedin pr-1" aria-hidden="true"></i></a>
+
+
+
+
+
+  <a href="//twitter.com/ronaldrfarias" target="_blank" rel="noopener me"><i class="fab fa-twitter pr-1" aria-hidden="true"></i></a>
+
+
+
+  <a href="//instagram.com/ronaldrodriguesfarias" target="_blank" rel="noopener me"><i class="fab fa-instagram pr-1" aria-hidden="true"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+  <a href="mailto:ronald-farias@outlook.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1 post-wrapper white-bg single-post dont-break-out">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+  
+    <li><a href="ronald.dev.br/categories/python"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> python </a></li>
+  
+    <li><a href="ronald.dev.br/categories/article"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> article </a></li>
+  
+  
+  
+  </ul>
+  <div class="px-4 post-heading">Python: anti-patterns que você talvez não conheça</div>
+<ul class="post-meta li-x mt-1">
+  
+    <li>Mar 16, 2020</li>
+  
+
+  
+    <li class="middot"></li>
+    <li></li>
+  
+</ul>
+
+
+  
+</div>
+
+
+          <div class="post-content markdown">
+            <h2 id="introdução">Introdução</h2>
+<p>Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.</p>
+<p>Este artigo é fortemente baseado na sessão &ldquo;<a href="https://www.python.org/dev/peps/pep-0008/#programming-recommendations">Programming Recomendations</a>&rdquo; da PEP8 e no e-book gratuito &ldquo;<a href="https://docs.quantifiedcode.com/python-anti-patterns/index.html">The Little Book of Python Anti-Patterns</a>&rdquo;, com pequenas adições pessoais na descrição de cada tópico. 😄</p>
+<h2 id="antipatterns">Anti patterns</h2>
+<h3 id="comparacoes-com-igualdade">Comparações com o operador de igualdade <code>==</code></h3>
+<h4 id="para-true-ou-false">Para True ou False</h4>
+<p>Quando escrevemos condições booleanas como:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">condition</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+</code></pre></div><p>Queremos dizer: &ldquo;se esta condição é verdadeira, faça isto&rdquo;.</p>
+<p>Em um contexto de operações booleanas, o Python já interpreta <a href="https://docs.python.org/2/reference/expressions.html#boolean-operations">valores não vazios como <code>True</code></a>, o que torna a comparação acima bastante redundante se <code>condition</code> for uma variável.</p>
+<p>No caso abaixo:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">condition</span> <span class="o">=</span> <span class="s1">&#39;algum valor qualquer&#39;</span>
+<span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># esse contexto será executado.</span>
+</code></pre></div><p>A variável <code>condition</code> será avaliada como <code>True</code> e executará o bloco do <code>if</code>, mesmo <code>condition</code> sendo uma string e não um booleano.</p>
+<blockquote>
+<p>Internamente, o Python chama o método mágico <code>__bool__()</code> do objeto que efetuará a lógica por trás da avaliação sobre qual valor booleano aquele objeto assumirá, veja todos os métodos mágicos disponíveis <a href="https://docs.python.org/3/reference/datamodel.html#basic-customization">aqui</a>.</p>
+</blockquote>
+<p>Em casos bastante específicos onde há a necessidade de comparação explícita, prefira o pattern proposto na PEP8: <code>if condition is True</code>, ambos os formatos são para a redução de redundâncias e incrementos de legibilidade, tudo acima também se aplica para comparações com <code>False</code>.</p>
+<h4 id="comparações-com-none">Comparações com None</h4>
+<p>Este tópico é bem semelhante ao tópico anterior, com a adição de um detalhe:</p>
+<p>Tome cuidado ao usar o formato quando sua intenção é validar se sua variável é diferente de <code>None</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+</code></pre></div><p>Tipos built-in vazios e <code>None</code> em um contexto booleano serão interpretados da mesma forma: Como <code>False</code>.</p>
+<p>No código abaixo há o exemplo de uma prática comum: A definição de valores <em>default</em> para parâmetros de funções. Também é comum utilizarmos estes pârametros como <em>flags</em> que definem fluxos internos de execução da função:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">bar</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Yay! The bar received something!&#34;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Oh no, the bar received nothing&#34;</span><span class="p">)</span>
+
+
+<span class="n">foo</span><span class="p">({})</span>  <span class="c1"># send an empty dict</span>
+<span class="c1"># output</span>
+<span class="o">&gt;&gt;</span><span class="s2">&#34;Oh no, the bar received nothing&#34;</span>
+</code></pre></div><p>No exemplo acima, o dicionário vazio <code>{}</code> foi avaliado da mesma forma que <code>None</code>, induzindo <code>foo</code> a dizer que nada foi passado para <code>bar</code>.
+Apesar de conceitualmente &ldquo;nada&rdquo; realmente tenha sido passado e acima termos um exemplo inofensivo, essa checagem abre brechas para comportamentos inesperados e a retornos imprevisíveis.</p>
+<p>Prefira a notação sugerida na PEP8:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="c1"># ou para negações </span>
+
+<span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+</code></pre></div><p>Por quê não comparar singletons usando a igualdade:</p>
+<blockquote>
+<p>O uso do <code>is</code> não se refere só a legibilidade, <code>None</code>, <code>True</code> e <code>False</code> são singletons nativos. Para comparações entre singletons
+deve se preferir o operador <code>is</code>, ele compara o endereço de memória dos objetos, não seus valores.</p>
+</blockquote>
+<blockquote>
+<p>O operador <code>==</code> invoca o método <code>__eq__</code> dos objetos para determinar a igualdade, enquanto o operador <code>is</code> invoca seus <code>id()</code>.</p>
+</blockquote>
+<h3 id="função-que-possui-diferentes-tipos-de-retorno">Função que possui diferentes tipos de retorno</h3>
+<p>Pense: Se você se vê fazendo checagem de tipos no retorno de uma função, é sinal de que ela está sob esse antipattern.</p>
+<p>Caso o retorno esperado seja de um determinado tipo, como <code>list</code>, <code>dict</code> ou <code>tuple</code>, etc&hellip; e subitamente é retornado outro diferente (e.g. <code>None</code>), quem está chamando a função é obrigado a sempre fazer uma checagem de tipos pra saber se o objeto foi criado corretamente.</p>
+<p>Isto causa <strong>confusão</strong> e gera <strong>código complexo</strong>. Neste cenário, caso a função não consiga construir o objeto desejado, prefira disparar uma exceção ao invés de retornar um valor diferente do desejado.</p>
+<p><strong>Modo errado</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">):</span>
+    <span class="c1"># ... some logic code</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;your&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">}</span>
+
+</code></pre></div><p>No caso acima, em vez de retornar <code>None</code> para o fluxo inválido, prefira por uma exceção:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">):</span>
+    <span class="c1"># ... some logic code</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The object could not be created.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;your&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">}</span>
+</code></pre></div><p>Isto irá tornar os erros mais legíveis e encontráveis. Optar por uma exceção ao invés de &ldquo;tipos de dados para representar retornos inválidos&rdquo; tornará seu código mais consistente e evitará que eventualmente você se perca nos padrões que criou, devo retornar um <code>{}</code> ou <code>None</code>? Uma exceção virá com importantes metadatas e quando você não a tiver, saberá que tudo ocorreu bem.</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="ronald.dev.br/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="ronald.dev.br/tags/python" role="button">python </a></li>
+      
+    
+      <li><a href="ronald.dev.br/tags/pep8" role="button">pep8 </a></li>
+      
+    
+      <li><a href="ronald.dev.br/tags/anti-patterns" role="button">anti-patterns </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#introdu%c3%a7%c3%a3o">
+												 Introdução
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#antipatterns">
+												 Anti patterns
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#comparacoes-com-igualdade">
+												 Comparações com o operador de igualdade ==
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#para-true-ou-false">
+												 Para True ou False
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#compara%c3%a7%c3%b5es-com-none">
+												 Comparações com None
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#fun%c3%a7%c3%a3o-que-possui-diferentes-tipos-de-retorno">
+												 Função que possui diferentes tipos de retorno
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+  <a href="//github.com/ronald-tr" target="_blank" rel="noopener me"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+
+
+
+
+
+
+
+  <a href="//linkedin.com/in/ronald-rodrigues-farias-aa4313a3" target="_blank" rel="noopener me"><i class="fab fa-linkedin pr-1" aria-hidden="true"></i></a>
+
+
+
+
+
+  <a href="//twitter.com/ronaldrfarias" target="_blank" rel="noopener me"><i class="fab fa-twitter pr-1" aria-hidden="true"></i></a>
+
+
+
+  <a href="//instagram.com/ronaldrodriguesfarias" target="_blank" rel="noopener me"><i class="fab fa-instagram pr-1" aria-hidden="true"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+  <a href="mailto:ronald-farias@outlook.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+
+
+
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    <span>  2016 - 2020 &copy; | Theme <a href='https://github.com/EliiseS/AllinOne' target="_blank">AllinOne</a> </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="ronald.dev.br/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="ronald.dev.br/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="ronald.dev.br/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="ronald.dev.br/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="ronald.dev.br/js/vendors-extensions/bootstrap4/bootstrap.min.js" ></script>
+
+<script type="text/javascript" src="ronald.dev.br/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="ronald.dev.br/js/main.js"></script>
+
+
+
+  
+  <script src="ronald.dev.br/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="ronald.dev.br/js/vendors/katex/katex.min.js"> </script>
+  <script src="ronald.dev.br/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+  
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

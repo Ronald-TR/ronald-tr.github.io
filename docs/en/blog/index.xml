@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog:Me on IT | The Blog</title>
+    <link>ronald.dev.br/en/blog/</link>
+    <description>Recent content in Blog:Me on IT | The Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="ronald.dev.br/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>8 most common python anti-patterns that you shouldn&#39;t know</title>
+      <link>ronald.dev.br/en/blog/2020-03/8-most-common-python-anti-patterns-that-you-shouldnt-know/</link>
+      <pubDate>Mon, 16 Mar 2020 14:05:36 -0300</pubDate>
+      
+      <guid>ronald.dev.br/en/blog/2020-03/8-most-common-python-anti-patterns-that-you-shouldnt-know/</guid>
+      <description>Hello !</description>
+    </item>
+    
+  </channel>
+</rss>

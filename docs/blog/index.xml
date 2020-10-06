@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog:Me on IT | O Blog</title>
+    <link>ronald.dev.br/blog/</link>
+    <description>Recent content in Blog:Me on IT | O Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="ronald.dev.br/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python: anti-patterns que você talvez não conheça</title>
+      <link>ronald.dev.br/blog/2020-03/python-anti-patterns-que-voc%C3%AA-talvez-n%C3%A3o-conhe%C3%A7a/</link>
+      <pubDate>Mon, 16 Mar 2020 14:05:36 -0300</pubDate>
+      
+      <guid>ronald.dev.br/blog/2020-03/python-anti-patterns-que-voc%C3%AA-talvez-n%C3%A3o-conhe%C3%A7a/</guid>
+      <description>Introdução Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.
+Este artigo é fortemente baseado na sessão &amp;ldquo;Programming Recomendations&amp;rdquo; da PEP8 e no e-book gratuito &amp;ldquo;The Little Book of Python Anti-Patterns&amp;rdquo;, com pequenas adições pessoais na descrição de cada tópico. 😄
+Anti patterns Comparações com o operador de igualdade == Para True ou False Quando escrevemos condições booleanas como:
+if condition == True: Queremos dizer: &amp;ldquo;se esta condição é verdadeira, faça isto&amp;rdquo;.
+Em um contexto de operações booleanas, o Python já interpreta valores não vazios como True, o que torna a comparação acima bastante redundante se condition for uma variável.
+No caso abaixo:
+condition = &amp;#39;algum valor qualquer&amp;#39; if condition: # esse contexto será executado. A variável condition será avaliada como True e executará o bloco do if, mesmo condition sendo uma string e não um booleano.
+ Internamente, o Python chama o método mágico __bool__() do objeto que efetuará a lógica por trás da avaliação sobre qual valor booleano aquele objeto assumirá, veja todos os métodos mágicos disponíveis aqui.
+ Em casos bastante específicos onde há a necessidade de comparação explícita, prefira o pattern proposto na PEP8: if condition is True, ambos os formatos são para a redução de redundâncias e incrementos de legibilidade, tudo acima também se aplica para comparações com False.</description>
+    </item>
+    
+  </channel>
+</rss>

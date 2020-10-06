@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>ronald.dev.br/blog/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/blog/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/about/</loc>
+    <lastmod>2020-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/tags/anti-patterns/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/categories/article/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/categories/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/tags/pep8/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/tags/python/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/categories/python/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/blog/2020-03/python-anti-patterns-que-voc%C3%AA-talvez-n%C3%A3o-conhe%C3%A7a/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/blog/2020-03/8-most-common-python-anti-patterns-that-you-shouldnt-know/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/blog/2020-03/python-anti-patterns-que-voc%C3%AA-talvez-n%C3%A3o-conhe%C3%A7a/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/tags/</loc>
+    <lastmod>2020-03-16T14:05:36-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>ronald.dev.br/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="ronald.dev.br/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="ronald.dev.br/series/"
+                />
+  </url>
+  
+</urlset>
