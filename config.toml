@@ -1,227 +1,145 @@
-# baseurl                 = "https://ronald-tr.github.io"
-DefaultContentLanguage  = "en"
-title                   = "IT - The Blog | Ronald"
-theme                   = "hugo-future-imperfect-slim"
-# theme                   = "ananke"
-preserveTaxonomyNames   = true
-paginate                = 3
-disqusShortname         = ""
-googleAnalytics         = ""
-pluralizeListTitles     = false
-disableLanguages        = [""]
+baseURL                   = "ronald.dev.br"
+builddrafts                = false
+DefaultContentLanguage     = "pt"
+languageCode               = "en-us"
+# defaultContentLanguageInSubdir = true
+canonifyurls               = true
+contentdir                 = "content"
+layoutdir                  = "layouts"
+publishdir                 = "public"
+enableEmoji                = true
+hasCJKLanguage             = true
+summaryLength              = 200
+Paginate                   = 3
 
-[markup]
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 2
+theme                      = "allinone"
+title                      = "Ronald Rodrigues | IT Blog"
 
-[params]
-  # Add additional section names to mainSections to include posts from
-  # those sections on the homepage.
-  # mainSections          = ["blog"]
-  enableCDN             = false
+pygmentsuseclasses         = true
 
-  # Loads CSS and JavaScript files. The variable is an array so that you can load
-  # multiple/additional files if necessary. The standard theme files can be loaded
-  # by adding the value, "default". Default includes the add-on.css and and-on.js.
-  # Example: ["default", "/path/to/file"]
-  cssFiles              = ["default"]
-  jsFiles               = ["default"]
-  # Sets options for highlight.js
-  highlightjs           = true
-  highlightjsTheme      = "dracula"
-  highlightjsLang       = ["html", "css", "js", "toml"]
-  # Sets where "View More Posts" links to
-  viewMorePostsLink     = "/posts/"
-  # Activate Estimated Reading Times, which appear in the post headers
-  readingTime           = true
-  # Sets which Social Share links appear in posts.
-  # Options are twitter, facebook, reddit, linkedin, pinterest, email
-  socialShare           = ["twitter", "facebook", "reddit", "linkedin",
-                          "pinterest", "email"]
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    title = "IT | The Blog"
+    languageName = "English"
+    languageCode = "en"
+    weight = 1
 
-  [params.meta]
-    # Sets the meta tag description
-    description         = "IT - The Blog. Is the Ronald Farias personal blog, compiling use(less)full articles of programming languages and IT career."
-    # Sets the meta tag author
-    author              = "Ronald Farias"
-    # If you would like to add more comprehensive favicon support passed root
-    # directory favicon.ico, utlize this funtion. It is recommened to use
-    # https://realfavicongenerator.net to generate your icons as that is the basis
-    # for the theme's naming.
-    favicon             = true
-    svg                 = true
-    faviconVersion      = "1"
-    msColor             = "#ffffff" # Copy from the https://realfavicongenerator.net
-    iOSColor            = "#ffffff" # Copy from the https://realfavicongenerator.net
+    # [[languages.en.menu.main]]
+    #   name                   = "Blog"
+    #   weight                 = -120
+    #   identifier             = "blog"
+    #   url                    = "blog/"  
 
-  [params.header]
-    # Sets the navbarTitle that appears in the top left of the navigation bar
-    navbarTitle         = "Ronald Farias"
-    # Sets navbarTitle to match the section of the website
-    dynamicTitles       = true
-    searchMenu          = true
-    shareMenu           = true
-    languageMenu        = true
+    # [[languages.en.menu.main]]
+    #   name                   = "Moment"
+    #   weight                 = -110
+    #   identifier             = "moment"
+    #   url                    = "moment/" 
 
-  # These are optional params related to the sidebar. They are recommended, but not
-  # required for proper functionality. HTML is supported within the params.
-  [params.intro]
-    header                = "IT - The Blog"
-    paragraph             = "Wellcome adventurer, feel free to read some of my articles"
-    rssIntro              = true
-    socialIntro           = true
-    # You may not want to display a long intro above content in the
-    # single column layout used on smaller screens.
-    hideWhenSingleColumn  = false
-    # But you may want to always display the intro on the homepage.
-    alwaysOnHomepage      = false
+    # [[languages.en.menu.main]]
+    #   name                   = "About"
+    #   weight                 = -100
+    #   identifier             = "about"
+    #   url                    = "about/"  
 
-    # This appears at the top of the sidebar above params.intro.header.
-    # A width of less than 100px is recommended from a design perspective.
-    [params.intro.pic]
-      src                 = "/img/saitama_icon.jpg"
-      # Masks image in a certain shape. Supported are circle, triangle, diamond, and hexagon.
-      shape               = "circle"
-      # circle = true
-      width               = ""
-      alt                 = "IT- The Blog"
+  [languages.pt]
+    contentDir = "content/pt"
+    title = "IT | O Blog"
+    languageName = "Portuguese"
+    languageCode = "pt"
+    weight = 2
+    welcome_head             = "Oi, aventureiro!"
+    welcome_word             = "~ Pegue sua bebida e siga em frente ~"
+    # [[Languages.pt.menu.main]]
+    #   name              = "Início"
+    #   identifier        = "home"
+    #   url               = "/"
+    #   weight            = 1
 
-  [params.sidebar]
-    about               = "Wellcome adventurer! i'ld like that this blog follows my studies and adventuries in IT world, so be free to choose your favorite drink and read some of the articles!"
-    # Sets the number of recent posts to show in the sidebar. The default value is 5.
-    postAmount          = 5
-    # set to show or to hide categories in the sidebar
-    # categories          = true
-    # Sets Categories to sort by number of posts instead of alphabetical
-    categoriesByCount   = true
+    # [[Languages.pt.menu.main]]
+    #   name              = "Sobre"
+    #   weight            = 2
+    #   identifier        = "about"
+    #   url               = "/about/"
 
-  [params.footer]
-    # Sets RSS icons to appear on the sidebar with the social media buttons
-    rssFooter           = false
-    # Sets Social Media icons to appear on the sidebar
-    socialFooter        = false
+    # [[Languages.pt.menu.main]]
+    #   name              = "Blog"
+    #   identifier        = "Blog"
+    #   url               = "blog/"
+    #   weight            = 3
 
-  # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
-  # due to its ease of use. Feel free to check out both and decide which you would
-  # prefer to use. See staticman.yml for additional settings.
-  [params.staticman]
-    # If using GitHub, go to https://github.com/apps/staticman-net
-    # If using GitLab, just add the GitLab bot, NO need to hit `/connect/v3/...`
-    enabled             = false
-    api                 = ""  # without trailing slash, defaults to "staticman3.herokuapp.com"
-    gitProvider         = "github"  # either "github" or "gitlab"
-    username            = ""
-    repo                = ""
-    branch              = ""
+  #   [[Languages.pt.menu.main]]
+  #     name              = "Momentos"
+  #     identifier        = "moment"
+  #     url               = "moment/"
+  #     weight            = 5
 
-    [params.staticman.recaptcha]
-      # Both keys must be present to enable recaptcha
-      siteKey           = "" # Site Key
-      encryptedKey      = ""
+[permalinks]
+  blog                     = "blog/:year-:month/:slug/"
+
+
+[taxonomies]
+  tag                      = "tags"
+  series                   = "series"
+  category                 = "categories"
+
 
 [menu]
-  # Sets the menu items in the navigation bar
-  # Identifier prepends a Font Awesome icon to the menu item
   [[menu.main]]
-    name              = "Home"
-    identifier        = "home"
-    url               = "/"
-    contentDir        = "/en/"
-    pre               = "<i class='fa fa-home'></i>"
-    weight            = 1
+    name                   = "Blog"
+    weight                 = -120
+    identifier             = "blog"
+    url                    = "blog/"  
 
   [[menu.main]]
-    name              = "About"
-    identifier        = "about"
-    url               = "/about/"
-    # contentDir        = "/en/about"
-    pre               = "<i class='far fa-id-card'></i>"
-    weight            = 2
+    name                   = "Moment"
+    weight                 = -110
+    identifier             = "moment"
+    url                    = "moment/" 
 
   [[menu.main]]
-    name              = "Posts"
-    identifier        = "Posts"
-    url               = "/posts/"
-    pre               = "<i class='far fa-newspaper'></i>"
-    weight            = 3
+    name                   = "About"
+    weight                 = -100
+    identifier             = "about"
+    url                    = "about/"  
 
-  [[menu.main]]
-    name              = "Categories"
-    identifier        = "categories"
-    url               = "/categories/"
-    pre               = "<i class='fas fa-sitemap'></i>"
-    weight            = 5
 
-  [[menu.main]]
-    name              = "Contact"
-    identifier        = "contact"
-    url               = "/contact/"
-    pre               = "<i class='far fa-envelope'></i>"
-    weight            = 6
+ 
 
-[Languages]
-  # Each language has its own menu.
-  [Languages.en]
-    LanguageCode        = "en"
-    LanguageName        = "English"
-    weight              = 1
-    contentDir          = "content/en"
+[params]
+  faviconfile              = "img/zheng.png"               # from static/
+  avatar                   = "img/saitama.jpg"             # path to image in static dir e.g img/avatar.png 
+  author                   = "Ronald Rodrigues"
+  description              = ["Software Engineer", "Writting some stuff posts", "and sharing my love or hate by the things."]           # appears in the site header when set to a non-empty string
+  welcome_head             = "Hi, adventurer!"
+  welcome_word             = "~ Grabe your drink and move on ~"
 
-  [Languages.pt]
-    LanguageCode        = "pt"
-    LanguageName        = "Português"
-    title               = "IT - O Blog | Ronald"
-    description         = "Um tema do HTML5 UP, portado por Julio Pescadora e reduzido por Patrick Collins. Multilíngue por StatnMap. Feito com Hugo."
-    weight              = 2
-    contentDir          = "content/pt"
+  latestpostscount         = 5                             # how many posts to display on the home page
+  bloggroupby              = 'month'
+  dateform                 = "Jan 2, 2006"
+  dateformfull             = "2006-01-02  Monday  15:04:05"
+  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
 
-    [[Languages.pt.menu.main]]
-      name              = "Início"
-      identifier        = "home"
-      url               = "/"
-      pre               = "<i class='fas fa-home'></i>"
-      weight            = 1
+  # slides
+  slidesDirPath            = "static/img/header-slides"    # path to image in local dir (path for hugo)
+  slidesDirPathURL         = "img/header-slides"    # path to image in static dir (for static pages)
 
-    [[Languages.pt.menu.main]]
-      name              = "Sobre"
-      identifier        = "about"
-      url               = "/about/"
-      pre               = "<i class='far fa-id-card'></i>"
-      weight            = 2
+  # highlighting 
+  highlightjs              = true
 
-    [[Languages.pt.menu.main]]
-      name              = "Posts"
-      identifier        = "Posts"
-      url               = "/posts/"
-      pre               = "<i class='far fa-newspaper'></i>"
-      weight            = 3
+  # latex
+  katex                    = true
 
-    [[Languages.pt.menu.main]]
-      name              = "Categorias"
-      identifier        = "categories"
-      url               = "/categories/"
-      pre               = "<i class='fas fa-sitemap'></i>"
-      weight            = 5
-
-    [[Languages.pt.menu.main]]
-      name              = "Contato"
-      identifier        = "contact"
-      url               = "/contact/"
-      pre               = "<i class='far fa-envelope'></i>"
-      weight            = 6
-
-# Sets Social Media icons to appear and link to your account. Value should be your
-# username unless otherwise noted. These are the icons affected by socialAppearAtTop
-# and socialAppearAtBottom.
-[social]
-  # Coding Communities
-  github                = "pacollins/hugo-future-imperfect-slim"
-  medium                = ""
-  # Professional/Business Oriented Communities
-  linkedin              = "example"
-  instagram             = "example"
-  twitter               = "example"
-  telegram              = "example"
-  email                 = "example"
+  # links
+  email                    = "ronald-farias@outlook.com"
+  github                   = "//github.com/ronald-tr"
+  linkedin                 = "//linkedin.com/in/ronald-rodrigues-farias-aa4313a3"
+  twitter                  = "//twitter.com/ronaldrfarias" 
+  instagram                = "//instagram.com/ronaldrodriguesfarias"
+  # include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
+  
+  # analytics
+  googleAnalytics          = "your-google-analytic-id"
+    
+    
