@@ -1,4 +1,4 @@
-baseURL                   = "ronald.dev.br"
+baseURL                   = "http://www.ronald.dev.br/"
 builddrafts                = false
 DefaultContentLanguage     = "pt"
 languageCode               = "en-us"
