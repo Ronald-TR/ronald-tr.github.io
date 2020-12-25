@@ -1,9 +1,9 @@
 +++
 
 date = "2020-08-05"
-title = "Blog:Me"
+title = "Postagens"
 draft = false
-
+img = "img/saitama.jpg"
 +++
 
-Hi adventurer
+Olá aventureiro!
