@@ -1,6 +1,6 @@
 baseURL                   = "http://www.ronald.dev.br/"
 builddrafts                = false
-DefaultContentLanguage     = "pt"
+defaultContentLanguage     = "en-us"
 languageCode               = "en-us"
 # defaultContentLanguageInSubdir = true
 canonifyurls               = true
@@ -18,62 +18,61 @@ title                      = "Ronald Rodrigues | IT Blog"
 pygmentsuseclasses         = true
 
 [languages]
+
   [languages.en]
     contentDir = "content/en"
     title = "IT | The Blog"
     languageName = "English"
-    languageCode = "en"
-    weight = 1
+    languageCode = "en-us"
+    welcome_head             = "Hi, adventurer!"
+    welcome_word             = "~ Grabe your drink and move on ~"
+    weight = 0
 
-    # [[languages.en.menu.main]]
-    #   name                   = "Blog"
-    #   weight                 = -120
-    #   identifier             = "blog"
-    #   url                    = "blog/"  
+    [[languages.en.menu.main]]
+      name                   = "Blog"
+      weight                 = 0
+      identifier             = "blog"
+      url                    = "blog/"
 
-    # [[languages.en.menu.main]]
-    #   name                   = "Moment"
-    #   weight                 = -110
-    #   identifier             = "moment"
-    #   url                    = "moment/" 
+    [[languages.en.menu.main]]
+      name                   = "Moment"
+      weight                 = 0
+      identifier             = "moment"
+      url                    = "moment/"
 
-    # [[languages.en.menu.main]]
-    #   name                   = "About"
-    #   weight                 = -100
-    #   identifier             = "about"
-    #   url                    = "about/"  
+    [[languages.en.menu.main]]
+      name                   = "About"
+      weight                 = 0
+      identifier             = "about"
+      url                    = "about/"
 
   [languages.pt]
     contentDir = "content/pt"
     title = "IT | O Blog"
     languageName = "Portuguese"
     languageCode = "pt"
-    weight = 2
+    weight = 10
     welcome_head             = "Oi, aventureiro!"
     welcome_word             = "~ Pegue sua bebida e siga em frente ~"
-    # [[Languages.pt.menu.main]]
-    #   name              = "Início"
-    #   identifier        = "home"
-    #   url               = "/"
-    #   weight            = 1
 
-    # [[Languages.pt.menu.main]]
-    #   name              = "Sobre"
-    #   weight            = 2
-    #   identifier        = "about"
-    #   url               = "/about/"
 
-    # [[Languages.pt.menu.main]]
-    #   name              = "Blog"
-    #   identifier        = "Blog"
-    #   url               = "blog/"
-    #   weight            = 3
+    [[Languages.pt.menu.main]]
+      name              = "Blog"
+      identifier        = "Blog"
+      url               = "pt/blog/"
+      weight            = 10
 
-  #   [[Languages.pt.menu.main]]
-  #     name              = "Momentos"
-  #     identifier        = "moment"
-  #     url               = "moment/"
-  #     weight            = 5
+    [[Languages.pt.menu.main]]
+      name              = "Momentos"
+      identifier        = "moment"
+      url               = "moment/"
+      weight            = 10
+
+    [[Languages.pt.menu.main]]
+      name              = "Sobre"
+      weight            = 10
+      identifier        = "about"
+      url               = "pt/about/"
 
 [permalinks]
   blog                     = "blog/:year-:month/:slug/"
@@ -86,23 +85,30 @@ pygmentsuseclasses         = true
 
 
 [menu]
+  name = "en"
+  [[menu.main]]
+    name                   = "home"
+    weight                 = -120
+    identifier             = "Home"
+    url                    = "/"
+
   [[menu.main]]
     name                   = "Blog"
     weight                 = -120
     identifier             = "blog"
-    url                    = "blog/"  
+    url                    = "blog/"
 
   [[menu.main]]
     name                   = "Moment"
     weight                 = -110
     identifier             = "moment"
-    url                    = "moment/" 
+    url                    = "moment/"
 
   [[menu.main]]
     name                   = "About"
     weight                 = -100
     identifier             = "about"
-    url                    = "about/"  
+    url                    = "about/"
 
 
  
@@ -112,8 +118,6 @@ pygmentsuseclasses         = true
   avatar                   = "img/saitama.jpg"             # path to image in static dir e.g img/avatar.png 
   author                   = "Ronald Rodrigues"
   description              = ["Software Engineer", "Writting some stuff posts", "and sharing my love or hate by the things."]           # appears in the site header when set to a non-empty string
-  welcome_head             = "Hi, adventurer!"
-  welcome_word             = "~ Grabe your drink and move on ~"
 
   latestpostscount         = 5                             # how many posts to display on the home page
   bloggroupby              = 'month'

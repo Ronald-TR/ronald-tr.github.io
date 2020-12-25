@@ -1,0 +1,115 @@
+baseURL: 'http://www.ronald.dev.br/'
+builddrafts: false
+defaultContentLanguage: pt
+languageCode: en-us
+canonifyurls: true
+contentdir: content
+layoutdir: layouts
+publishdir: public
+enableEmoji: true
+hasCJKLanguage: true
+summaryLength: 200
+paginate: 3
+theme: AllinOne
+title: Ronald Rodrigues | IT Blog
+pygmentsuseclasses: true
+
+languages:
+  en:
+    contentDir: content/en
+    title: IT | The Blog
+    languageName: English
+    languageCode: en-us
+    welcome_head: 'Hi, adventurer!'
+    welcome_word: ~ Grabe your drink and move on ~
+    weight: 0
+    menu:
+      main:
+        - name: Blog
+          weight: 0
+          identifier: blog
+          url: blog/
+        # - name: Moments
+        #   weight: 0
+        #   identifier: moment
+        #   url: moment/
+        - name: About
+          weight: 0
+          identifier: about
+          url: about/
+  pt:
+    contentDir: content/pt
+    title: IT | O Blog
+    languageName: Portuguese
+    languageCode: pt
+    weight: 10
+    welcome_head: 'Oi, aventureiro!'
+    welcome_word: ~ Pegue sua bebida e siga em frente ~
+    menu:
+      main:
+        - name: Home
+          identifier: home
+          url: pt/
+          weight: 9
+        - name: Blog
+          identifier: Blog
+          url: blog/
+          weight: 10
+        # - name: Momentos
+        #   identifier: moment
+        #   url: moment/
+          weight: 10
+        - name: Sobre
+          weight: 10
+          identifier: about
+          url: about/
+permalinks:
+  blog: 'blog/:year-:month/:slug/'
+taxonomies:
+  tag: tags
+  series: series
+  category: categories
+
+menu:
+  name: en
+  main:
+    - name: home
+      weight: -120
+      identifier: Home
+      url: /
+    - name: Blog
+      weight: -120
+      identifier: blog
+      url: blog/
+    - name: Moment
+      weight: -110
+      identifier: moment
+      url: moment/
+    - name: About
+      weight: -100
+      identifier: about
+      url: about/
+
+params:
+  faviconfile: img/zheng.png
+  avatar: img/saitama.jpg
+  author: Ronald Rodrigues
+  description:
+    - Software Engineer
+    - Writting some stuff posts
+    - and sharing my love or hate by the things.
+  latestpostscount: 5
+  bloggroupby: month
+  dateform: 'Jan 2, 2006'
+  dateformfull: '2006-01-02  Monday  15:04:05'
+  noshowreadtime: false
+  slidesDirPath: static/img/header-slides
+  slidesDirPathURL: img/header-slides
+  highlightjs: true
+  katex: true
+  email: ronald-farias@outlook.com
+  github: //github.com/ronald-tr
+  linkedin: //linkedin.com/in/ronald-rodrigues-farias-aa4313a3
+  twitter: //twitter.com/ronaldrfarias
+  instagram: //instagram.com/ronaldrodriguesfarias
+  googleAnalytics: your-google-analytic-id
