@@ -1,21 +1,22 @@
 ---
 title: "Python: anti-patterns que você talvez não conheça"
-description: "Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem."
-featured: '/snakes.jpg'
-image: '/images/trevor-cole-8uJ8w9pL-y8-unsplash.jpg'
+summary: "Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem."
+img: '/img/broken_window.jpg'
 date: 2020-03-16T14:05:36-03:00
 draft: false
 toc: true
 tags: ["python", "pep8", "anti-patterns"]
 categories: ["python", "article"]
+series: ["python"]
 show_reading_time: true
 type: "post"
 author: "Ronald Rodrigues"
 ---
 
-## Introdução
+## Introdução:
 
 Há muitos anti-patterns que podem ser óbvios durante uma revisão de código, outros, podem ser bastante contra intuitivos, por transpaçarem comportamentos internos da linguagem.
+
 
 Este artigo é fortemente baseado na sessão "[Programming Recomendations](https://www.python.org/dev/peps/pep-0008/#programming-recommendations)" da PEP8 e no e-book gratuito "[The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html)", com pequenas adições pessoais na descrição de cada tópico. :smile:
 
