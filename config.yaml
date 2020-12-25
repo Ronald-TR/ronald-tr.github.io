@@ -1,4 +1,4 @@
-baseURL: 'ronald.dev.br'
+baseURL: '/'
 builddrafts: false
 defaultContentLanguage: pt
 languageCode: en-us
